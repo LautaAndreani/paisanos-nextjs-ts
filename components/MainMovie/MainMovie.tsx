@@ -18,13 +18,13 @@ export default function MainMovie() {
               <li>Duration: {mainMovie.duration}</li>
               <li>Rating: {mainMovie.rating}</li>
             </ul>
-            <button className="font-bold text-2xl rounded-full w-1/2 p-10 bg-yellow-300 text-black mt-10 transition hover:bg-yellow-400">
+            <button className="font-bold text-2xl rounded-full w-1/2 p-10 bg-yellow text-black mt-10 transition hover:bg-yellow">
               Watch now
             </button>
           </div>
         </section>
         <section className="movie-right min-h-screen h-full w-1/2 relative">
-          <span className="gradient bg-gradient-to-r from-black to-transparent min-h-screen h-full w-full absolute top-0"></span>
+          <span className="gradient bg-gradient-to-r from-black to-transparent h-full w-full absolute top-0"></span>
           <Image src={mainMovie.coverImage} alt={mainMovie.name} width={1200} height={1000} priority />
         </section>
       </div>
