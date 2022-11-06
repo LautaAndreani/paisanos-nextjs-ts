@@ -8,7 +8,7 @@ export default function MainMovie() {
         <section className="flex w-1/2 min-h-screen">
           <div className="left-container m-auto min-h-[60%] min-w-full pl-20">
             <h2 className="text-8xl font-bold">{mainMovie.name}</h2>
-            <span className="text-yellow-300 text-3xl">★★★★☆</span>
+            <span className="text-yellow text-3xl">★★★★☆</span>
             <p className="max-w-[30rem] mt-10 leading-8">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis et voluptate quas unde consequatur amet perspiciatis
               libero non perferendis molestiae. Sunt ut incidunt harum quod possimus nobis optio maiores aperiam.
