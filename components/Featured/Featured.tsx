@@ -20,7 +20,7 @@ export default function Featured() {
               <div className="flex flex-col gap-4">
                 <div className="flex gap-4 items-center">
                   <Image src="/icons/clock.svg" alt="duration icon" width={30} height={30} />
-                  <span className="text-[#CCCCCC]">{res.duration}</span>
+                  <span className="text-gray">{res.duration}</span>
                   <Image src="/icons/eye.svg" alt="views icon" width={30} height={40} className="w-auto h-4" />
                   <span className="text-gray">{res.views}k views</span>
                 </div>
