@@ -1,9 +1,11 @@
+import MainMovie from "../MainMovie/MainMovie"
 import NavBar from "../NavBar/Navbar"
 
 export default function HomeApp() {
-  return (
-    <div>
-      <NavBar />
-    </div>
-  )
+	return (
+		<div>
+			<NavBar />
+			<MainMovie />
+		</div>
+	)
 }

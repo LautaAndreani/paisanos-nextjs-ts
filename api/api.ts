@@ -6,7 +6,8 @@ export async function getData(query: string = "movies"): Promise<BaseResponse[] 
   try {
     const data = await fetch(`${BASE_URL}/${query}`)
     const response = await data.json()
-    return response.data
+    // return response.data
+    return {}
   } catch (e) {
     if (e instanceof Error) {
       console.error(e.message)
