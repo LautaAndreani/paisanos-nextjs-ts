@@ -8,7 +8,7 @@ export default function Featured() {
 				<h2 className="text-5xl font-medium">Featured</h2>
 				<p className="text-yellow">View more</p>
 			</div>
-			<div className="featured-content grid grid-cols-3 grid-rows-3 gap-4 mt-6">
+			<div className="featured-content grid grid-cols-3 grid-rows-2 gap-4 mt-6">
 				{movies.map((res, index) => (
 					<span className={`min-w-full min-h-full h-fit overflow-hidden relative ${index === 0 ? "col-span-2" : ""}`} key={res._id}>
 						<span className="gradient bg-gradient-to-t from-black to-transparent h-full w-full absolute top-0"></span>
