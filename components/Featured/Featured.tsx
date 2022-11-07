@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { movies } from "../../mocks/mock"
 
 export default function Featured() {
@@ -11,6 +12,7 @@ export default function Featured() {
 			<div className="featured-content grid grid-cols-3 grid-rows-2 gap-4 mt-6">
 				{movies.map((res, index) => (
 					<span className={`min-w-full min-h-full h-fit overflow-hidden relative ${index === 0 ? "col-span-2" : ""}`} key={res._id}>
+						<Link href={`/movie/${res._id}`}>
 						<span className="gradient bg-gradient-to-t from-black to-transparent h-full w-full absolute top-0"></span>
 						<div className="h-full w-full absolute top-0 flex flex-col justify-between p-4">
 							<span className="badge w-fit py-3 px-6 rounded-full bg-yellow text-black">{res.genre}</span>
@@ -25,6 +27,7 @@ export default function Featured() {
 							</div>
 						</div>
 						<Image src={res.coverImage} alt={res.name} width={1900} height={1000} priority className="object-cover" />
+					</Link>
 					</span>
 				))}
 			</div>
