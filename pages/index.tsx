@@ -2,24 +2,26 @@ import HomeApp from "../components/Home/Home"
 
 import { getData } from "../api/api"
 // Models
-import { BaseResponse } from "../models/types"
-type Props = { data: BaseResponse[] }
+import { BaseResponse, Trailers } from "../models/types"
+type Props = { movies: BaseResponse[], trailers: Trailers}
 
-export default function Home({ data }: Props) {
-  return <HomeApp />
+export default function Home({ movies, trailers }: Props) {
+  return <HomeApp movie={movies} trailers={trailers}/>
 }
 
 export const getStaticProps = async () => {
-  const data = await getData("/movies")
+  const movies = await getData("/movies")
+  const trailers = await getData('/trailers')
 
-  if (!data) {
+  if (!movies || !trailers) {
     return {
       notFound: true,
     }
   }
   return {
     props: {
-      data,
+      movies,
+      trailers
     },
     revalidate: 60,
   }

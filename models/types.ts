@@ -19,3 +19,8 @@ export interface MovieDetail {
     coverImage: string,
     trailerImage: string,
 }
+
+export interface Trailers {
+    _id: string,
+    trailerImage: string
+}

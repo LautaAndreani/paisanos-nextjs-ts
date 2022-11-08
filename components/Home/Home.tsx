@@ -1,13 +1,18 @@
+import type { MovieDetail, Trailers } from "../../models/types"
+
 import Featured from "../Featured/Featured"
-import Footer from "../Footer/Footer"
 import MainMovie from "../MainMovie/MainMovie"
 
-export default function HomeApp() {
+type Props = {
+	movie: MovieDetail[],
+	trailers: Trailers
+}
+
+export default function HomeApp({ movie }: Props) {
 	return (
 		<div>
 			<MainMovie />
 			<Featured />
-			<Footer />
 		</div>
 	)
 }
