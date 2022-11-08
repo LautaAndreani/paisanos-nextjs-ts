@@ -1,10 +1,31 @@
-import { useRouter } from "next/router";
+import { getData } from "../../api/api"
+import MovieDetail from "../../components/MovieDetail/MovieDetail"
 
-export default function Movie () {
-    const {query: { id }} = useRouter()
-    return (
-        /* TODO Add MovieDetail */
-        <div>
-        I'm a movie
-    </div> )
+import { type MovieDetail as PropDetail } from "../../models/types"
+type Props = { movie: PropDetail }
+
+export default function Movie({ movie }: Props) {
+  return (
+    <div>
+      <MovieDetail movie={movie} />
+    </div>
+  )
+}
+
+export const getStaticPaths = async () => {
+  const movies = await getData("movies")
+
+  return {
+    paths: movies?.map((movie) => ({ params: { id: movie._id } })),
+    fallback: "blocking",
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
+  const movie = await getData(`movies/${params.id}`)
+
+  return {
+    props: { movie },
+    revalidate: 120,
+  }
 }
