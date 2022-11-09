@@ -4,15 +4,16 @@ import Featured from "../Featured/Featured"
 import MainMovie from "../MainMovie/MainMovie"
 
 type Props = {
-	movie: MovieDetail[],
-	trailers: Trailers
+	movies: MovieDetail[]
+	trailers: Trailers[]
+	mainMovie: MovieDetail
 }
 
-export default function HomeApp({ movie }: Props) {
+export default function HomeApp({ movies, trailers, mainMovie }: Props) {
 	return (
 		<div>
-			<MainMovie />
-			<Featured />
+			<MainMovie mainMovie={mainMovie} trailers={trailers} />
+			<Featured movies={movies} />
 		</div>
 	)
 }
